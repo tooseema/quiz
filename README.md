@@ -27,3 +27,18 @@ Game 1 — Political History: typed (20), four options (20), closest wins (20). 
 Game 2 — Football: typed elimination (20), four options (20), closest wins (20). Scores reset for the football final. Players re-use the same join QR code. Both games have independent scoreboards.
 
 **Update existing deployment:** Replace `rounds.js`, `server.js`, `index.html`, and `README.md` in the same GitHub repository (do not create a new Render service). Commit the changes and allow Render to redeploy. Existing in-memory participants and scores reset on deployment.
+
+
+## Game-show sound effects and animations (host screen)
+
+This version restores synthesized browser audio: question whoosh, final-five-second ticks, time-up horn, reveal ding, right/wrong result cues, applause, round drumroll, elimination wah-wah and victory fanfare. It also includes a red-kit celebration, screen flashes, score pops, a rising top-three podium and confetti. Audio plays **on the host browser only**, not on players' phones.
+
+Use the **Sound: on/off** button in the host-screen header. Click anywhere on the host screen once to unlock audio after opening it, as browsers block autoplay until interaction. If connected to a TV, ensure the laptop/TV volume and output device are enabled. Sound setting is remembered in that browser.
+
+### Update existing Render deployment
+1. Unzip and upload `index.html` into the root of your existing GitHub repository, replacing its old version.
+2. You may also upload `README.md`; the existing `rounds.js` and `server.js` are unchanged in this update.
+3. Commit. Render redeploys from GitHub automatically if auto-deploy is enabled.
+4. Reload the `/host?key=...` page, then click **Sound: on** and Start. Never expose your host key.
+
+The public domain must remain hosted on a compatible Node.js service such as the existing Render deployment; the HTML file by itself does not provide multiplayer.
