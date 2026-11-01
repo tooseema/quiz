@@ -16,10 +16,14 @@ This is a **deploy-ready website**, not an already published URL. It requires ho
 
 - The free Render instance can sleep when idle. Open the host page in advance to wake it up.
 - Game data is stored in server memory. A restart, sleeping container, or new deployment will **reset players and scores**. For a critical event, use a paid always-on instance and plan persistence.
-- One running service hosts one game, not multiple separate rooms. Up to 100 players; performance depends on hosting tier.
+- One running service hosts both separate games, but not multiple simultaneous independent rooms. Up to 100 players; performance depends on hosting tier.
 - The QR artwork loads from an external QR image service, so the host needs internet access.
 - The original markdown included only the round structure, not the actual questions. The included `rounds.js` contains placeholder sample questions that should be checked and replaced before playing.
 
 ## Round format
 
-Political History: typed (8), four options (9), closest wins (6). Football: typed (8), four options (8), closest wins (6), with first-round elimination and reset scores for the final.
+Game 1 — Political History: typed (20), four options (20), closest wins (20). Complete this game and see its own final scores.
+
+Game 2 — Football: typed elimination (20), four options (20), closest wins (20). Scores reset for the football final. Players re-use the same join QR code. Both games have independent scoreboards.
+
+**Update existing deployment:** Replace `rounds.js`, `server.js`, `index.html`, and `README.md` in the same GitHub repository (do not create a new Render service). Commit the changes and allow Render to redeploy. Existing in-memory participants and scores reset on deployment.
