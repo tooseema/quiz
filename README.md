@@ -42,3 +42,6 @@ Use the **Sound: on/off** button in the host-screen header. Click anywhere on th
 4. Reload the `/host?key=...` page, then click **Sound: on** and Start. Never expose your host key.
 
 The public domain must remain hosted on a compatible Node.js service such as the existing Render deployment; the HTML file by itself does not provide multiplayer.
+
+## Personalized Liverpool celebrations
+The assets/ folder contains the player cartoons for **Jonathan**, **Avneesh**, and **Senvy**. The host screen uses them in end-of-round leader celebrations, elimination and the final podium when players join under those names (case-insensitive). Other names get the existing generic animations. Upload the **entire** ZIP contents to GitHub, including server.js, index.html and assets/; replacing index.html alone will not show the images. No change to the QR code or HOST_KEY is needed.
